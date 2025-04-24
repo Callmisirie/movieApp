@@ -8,6 +8,7 @@ export const TMBD_CONFIG = {
 }
 
 export const fetchMovies = async ({query}: {query: string}) => {
+  
   const endpoint = query 
     ? `${TMBD_CONFIG.BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
     : `${TMBD_CONFIG.BASE_URL}/discover/movie?sort_by=popularity.desc`;
@@ -26,5 +27,3 @@ export const fetchMovies = async ({query}: {query: string}) => {
 
   return data.results;
 }
-
-// /discover/movie

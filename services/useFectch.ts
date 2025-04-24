@@ -13,7 +13,7 @@ const useFecth = <T>(fectchFunction: () => Promise<T>, autoFetch = true) => {
       const result = await fectchFunction();
 
       setData(result);
-    } catch (error) {
+    } catch (err) {
       //@ts-ignore
       setError(err instanceof Error ? err : new Error("An error occurred"));
     } finally {
@@ -33,5 +33,7 @@ const useFecth = <T>(fectchFunction: () => Promise<T>, autoFetch = true) => {
     }
   }, [])
   
-  return {data, loading, error, refech: fetchData, reset};
+  return {data, loading, error, refetch: fetchData, reset};
 }
+
+export default useFecth;
