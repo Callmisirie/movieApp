@@ -11,6 +11,11 @@
     "ios": {
       "supportsTablet": true
     },
+    "extra": {
+      "appwriteDatabaseId": "680a9db5002e35bdc02f",
+      "appwriteCollectionId": "680a9dff00243f2ba31c",
+      "appwriteProjectId": "6800ebcf002991695800"
+    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/logo.png",
