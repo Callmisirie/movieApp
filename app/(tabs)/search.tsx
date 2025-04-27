@@ -20,10 +20,6 @@ const search = () => {
   } = useFecth(() => fetchMovies({query: searchQuery}), false);
 
   useEffect(() => {
-    if (movies?.length) {
-      updateSearchCount(searchQuery, movies[0]);
-    }
-
     const timeoutId = setTimeout( async () => {
       if(searchQuery.trim()) {
         await loadMovies();
@@ -34,6 +30,12 @@ const search = () => {
 
     return () => clearTimeout(timeoutId);
   }, [searchQuery])
+
+  useEffect(() => {
+    if(movies?.length > 0 && movies?.[0]) {
+      updateSearchCount(searchQuery, movies[0])
+    }
+  }, [movies]);
   
 
   return (
